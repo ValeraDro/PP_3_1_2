@@ -1,10 +1,8 @@
-package model;
+package web.model;
 
 public class Car {
     private int year;
-
     private String model;
-
     private int price;
 
     public Car(int year, String model, int price) {
