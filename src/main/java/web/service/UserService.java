@@ -1,41 +1,17 @@
 package web.service;
 
-import org.springframework.stereotype.Service;
-import web.dao.UserDao;
 import web.model.User;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
-@Service
-@Transactional
-public class UserService {
+public interface UserService {
+    List<User> index();
 
-    private final UserDao userdao;
+    User show(int id);
 
-    public UserService(UserDao userdao) {
-        this.userdao = userdao;
-    }
+    void save(User user);
 
+    void update(int id, User user);
 
-    public List<User> index() {
-        return (List<User>) userdao.findAll();
-    }
-
-    public User show(int id) {
-        return userdao.findById(id).orElse(null);
-    }
-
-    public void save(User user) {
-        userdao.save(user);
-    }
-
-    public void update(int id, User user) {
-        user.setId(id);
-        userdao.save(user);
-    }
-
-    public void delete(int id) {
-        userdao.deleteById(id);
-    }
+    void delete(int id);
 }

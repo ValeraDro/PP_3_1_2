@@ -63,7 +63,5 @@ public class UserController {
         users.delete(id);
         return "redirect:/users";
     }
-
-
 }
 
