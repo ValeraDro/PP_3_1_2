@@ -1,7 +1,6 @@
 package ru.javamentor.springboot.dao;
 
 
-
 import ru.javamentor.springboot.model.User;
 
 import java.util.List;
