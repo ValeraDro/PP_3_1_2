@@ -1,6 +1,5 @@
 package ru.javamentor.springboot.service;
 
-
 import ru.javamentor.springboot.model.User;
 
 import java.util.List;
