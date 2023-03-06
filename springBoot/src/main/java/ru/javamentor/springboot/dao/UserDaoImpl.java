@@ -1,7 +1,6 @@
 package ru.javamentor.springboot.dao;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import ru.javamentor.springboot.model.User;
 
 import javax.persistence.EntityManager;
@@ -25,13 +24,11 @@ public class UserDaoImpl implements UserDao {
         return entityManager.find(User.class, id);
     }
 
-    @Transactional
     @Override
     public void save(User user) {
         entityManager.persist(user);
     }
 
-    @Transactional
     @Override
     public void update(int id, User user) {
         User userToBeUpdated = show(id);
@@ -40,7 +37,6 @@ public class UserDaoImpl implements UserDao {
         entityManager.merge(userToBeUpdated);
     }
 
-    @Transactional
     @Override
     public void delete(int id) {
         User user = entityManager.find(User.class, id);
